@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Democracy First! Fridays</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/heroui/dist/css/heroui.min.css" rel="stylesheet">
   <style>
     /* Use relative units for sizing */
     body {
@@ -27,32 +26,33 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    /* Main content max-width 800px on larger screens, 100% on mobile */
-    main.container {
+    /* Main content max-width 800px on larger screens, 100% on mobile, centered */
+    main.hero-container {
       max-width: 800px;
       width: 100%;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
   <!-- Header with hero image -->
-  <header class="container-fluid p-0">
-    <img src="https://via.placeholder.com/1200x400?text=Hero+Image" alt="Hero Image" class="hero img-fluid">
+  <header class="hero-container-fluid hero-padding-0">
+    <img src="https://via.placeholder.com/1200x400?text=Hero+Image" alt="Hero Image" class="hero hero-responsive-img">
   </header>
 
   <!-- Main content -->
-  <main class="container mt-4">
+  <main class="hero-container hero-mt-4">
     <article>
-      <header class="mb-4">
-        <h1 class="display-4">Democracy First! Fridays</h1>
-        <p class="lead">A proposition for a series of community events in Missoula</p>
-        <p class="h5">Stand Up for Democracy. Build Community. Take Action.</p>
+      <header class="hero-mb-4">
+        <h1 class="hero-display-4">Democracy First! Fridays</h1>
+        <p class="hero-lead">A proposition for a series of community events in Missoula</p>
+        <p class="hero-h5">Stand Up for Democracy. Build Community. Take Action.</p>
       </header>
 
       <section class="content-section what-is-section">
         <h2>What is Democracy First! Fridays?</h2>
         <p>
-          Like the popular First Friday Art Walks that take place on the first Friday of each month, Democracy First! Fridays are a network of popup community events throughout Downtown Missoula with the aim at <strong>celebrating, protecting, and expanding our democratic values.</strong> This unique time in the history of our country requires a united pushback against the ongoing dismantling of our democratic institutions. There is no other time than now for communities to engage in open discussions, artistic expression, grassroots organizing, cooperation, education, and mutual aid.
+          Like the popular First Friday Art Walks that take place on the first Friday of each month, Democracy First! Fridays are a network of popup community events throughout Downtown Missoula that happen every Friday and are aimed at <strong>celebrating, protecting, and expanding our democratic values.</strong> This unique time in the history of our country requires a united pushback against the ongoing dismantling of our democratic institutions. There is no other time than now for communities to engage in open discussions, artistic expression, grassroots organizing, cooperation, education, and mutual aid.
         </p>
         <p>A united community can make a difference.</p>
       </section>
@@ -98,18 +98,17 @@
         </p>
         <p>If all that sounds good to you, let’s get started.</p>
         <p>
-          <a href="#" class="btn btn-primary">Sign Up to Host, Join, or Volunteer</a>
+          <a href="#" class="hero-btn hero-btn-primary">Sign Up to Host, Join, or Volunteer</a>
         </p>
       </section>
     </article>
   </main>
 
   <!-- Footer -->
-  <footer class="container text-center mt-4 mb-4">
+  <footer class="hero-container hero-text-center hero-mt-4 hero-mb-4">
     <p>&copy; 2025 Democracy First! Fridays. All rights reserved.</p>
   </footer>
 
-  <!-- Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heroui/dist/js/heroui.min.js"></script>
 </body>
 </html>
