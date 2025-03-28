@@ -4,63 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Democracy First! Fridays</title>
-  <link href="https://cdn.jsdelivr.net/npm/heroui/dist/css/heroui.min.css" rel="stylesheet">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Use relative units for sizing */
-    body {
-      font-size: 2rem;
-      line-height: 1.5;
-    }
-    .hero {
-      width: 100%;
-      height: auto;
-      max-height: 25rem;
-      object-fit: cover;
-    }
-    .content-section {
-      padding: 2rem 1rem;
-    }
-    /* Style H2 to be centered, bold, and uppercase */
-    h2 {
-      text-align: center;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    /* Main content max-width 800px on larger screens, 100% on mobile, centered */
-    main.hero-container {
-      max-width: 800px;
-      width: 100%;
-      margin: 0 auto;
-    }
+    /* Additional custom styles if needed */
   </style>
 </head>
-<body>
+<body class="font-sans text-3xl bg-yellow-400">
   <!-- Header with hero image -->
-  <header class="hero-container-fluid hero-padding-0">
-    <img src="https://via.placeholder.com/1200x400?text=Hero+Image" alt="Hero Image" class="hero hero-responsive-img">
+  <header class="w-full p-0">
+    <img src="https://via.placeholder.com/1200x400?text=Hero+Image" alt="Hero Image" class="w-full h-auto max-h-[25rem] object-cover">
   </header>
 
   <!-- Main content -->
-  <main class="hero-container hero-mt-4">
+  <main class="max-w-[800px] mx-auto mt-4 w-full">
     <article>
-      <header class="hero-mb-4">
-        <h1 class="hero-display-4">Democracy First! Fridays</h1>
-        <p class="hero-lead">A proposition for a series of community events in Missoula</p>
-        <p class="hero-h5">Stand Up for Democracy. Build Community. Take Action.</p>
+      <header class="text-center mb-5">
+        <h1 class="text-4xl font-bold mb-5">Democracy First! Fridays</h1>
+        <p class="text-5xl mb-5 font-bold">A proposition for a series of community events in Missoula</p>
+        <p class="text-5xl">Stand Up for Democracy. <br>Build Community. <br>Take Action.</p>
       </header>
 
-      <section class="content-section what-is-section">
-        <h2>What is Democracy First! Fridays?</h2>
-        <p>
-          Like the popular First Friday Art Walks that take place on the first Friday of each month, Democracy First! Fridays are a network of popup community events throughout Downtown Missoula that happen every Friday and are aimed at <strong>celebrating, protecting, and expanding our democratic values.</strong> This unique time in the history of our country requires a united pushback against the ongoing dismantling of our democratic institutions. There is no other time than now for communities to engage in open discussions, artistic expression, grassroots organizing, cooperation, education, and mutual aid.
+      <section class="py-8 px-4">
+        <h2 class="text-center font-bold uppercase text-4xl mb-4">What is Democracy First! Fridays?</h2>
+        <p class="mb-4">
+          Like the popular First Friday Art Walks that take place on the first Friday of each month, Democracy First! Fridays are a network of popup community events throughout Downtown Missoula that happen every Friday and are aimed at <strong>celebrating, protecting, and expanding our democratic values.</strong></p> <p clas="mb-4"> This unique time in the history of our country requires a united pushback against the ongoing dismantling of our democratic institutions. There is no other time than now for communities to engage in open discussions, artistic expression, grassroots organizing, cooperation, education, and mutual aid.
         </p>
-        <p>A united community can make a difference.</p>
+        <p class="text-center text-4xl font-bold mt-5">A united community can make a difference.</p>
       </section>
 
-      <section class="content-section get-involved-section">
-        <h2>Get Involved</h2>
-        <p>There are many ways to contribute to Democracy First! Fridays:</p>
-        <ul>
+      <section class="py-8 px-4">
+        <h2 class="text-center font-bold uppercase text-4xl mb-4">Get Involved</h2>
+        <p class="mb-4">Anyone can contribute to Democracy First! Fridays:</p>
+        <ul class="list-disc list-inside space-y-2">
           <li><strong>Host an Event</strong> – Do you have a special skill or knowledge that you can share with others? Create an inclusive experience that fosters dialogue, learning, and action.</li>
           <li><strong>Join an Event</strong> – Participate in Democracy First! events. Find a local gathering and connect with others who care about democracy.</li>
           <li><strong>Volunteer</strong> – Support event organizers, spread the word, or help with logistics.</li>
@@ -71,10 +47,10 @@
         </ul>
       </section>
 
-      <section class="content-section what-you-can-do-section">
-        <h2>What You Can Do</h2>
-        <p>All Democracy First! Fridays are inclusive events where everyone feels welcome and empowered. Here are just a few sample ways to bring the campaign to life in your community:</p>
-        <ul>
+      <section class="py-8 px-4">
+        <h2 class="text-center font-bold uppercase text-4xl mb-4">What You Can Do</h2>
+        <p class="mb-4">All Democracy First! Fridays are inclusive events where everyone feels welcome and empowered. Here are just a few sample ways to bring the campaign to life in your community:</p>
+        <ul class="list-disc list-inside space-y-2">
           <li>Public Forums – Discuss topics like voting rights, free speech, or local policies.</li>
           <li>Art Exhibits – Showcase diverse artists whose work champions democracy and equality.</li>
           <li>Film Screenings – Share powerful stories about social justice and civic action.</li>
@@ -91,24 +67,22 @@
         </ul>
       </section>
 
-      <section class="content-section why-it-matters-section">
-        <h2>Why It Matters</h2>
-        <p>
+      <section class="py-8 px-4">
+        <h2 class="text-center font-bold uppercase text-4xl mb-4">Why It Matters</h2>
+        <p class="mb-4">
           Democracy is more than elections—it’s about <strong>active participation, free expression, and standing up for our civil rights</strong>. By taking part in <strong>Democracy First! Fridays</strong>, you’re not just attending an event—you’re helping to create a society where <strong>everyone</strong> is seen, heard, and valued.
         </p>
-        <p>If all that sounds good to you, let’s get started.</p>
+        <p class="mb-4">If all that sounds good to you, let’s get started.</p>
         <p>
-          <a href="#" class="hero-btn hero-btn-primary">Sign Up to Host, Join, or Volunteer</a>
+          <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign Up to Host, Join, or Volunteer</a>
         </p>
       </section>
     </article>
   </main>
 
   <!-- Footer -->
-  <footer class="hero-container hero-text-center hero-mt-4 hero-mb-4">
+  <footer class="max-w-[800px] mx-auto text-center mt-4 mb-4 text-lg">
     <p>&copy; 2025 Democracy First! Fridays. All rights reserved.</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/heroui/dist/js/heroui.min.js"></script>
 </body>
 </html>
