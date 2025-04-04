@@ -5,22 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Democracy First! Fridays</title>
   <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Additional custom styles if needed */
-    .dff-red {color:rgb(253, 1, 0)}
-    .dff-blue {color:rgb(0, 91, 172)}
-    .dff-yellow {color: rgb(250, 204, 21)}
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body, html {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        
+        .dark-mode {
+            background-color: #1f2937 !important;
+            color: #e5e7eb;
+        }
+        
+        .form-container {
+            /*background-color: #111827;*/
+            box-shadow: 0 6px 6px -3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark-mode .form-header {
+            background: linear-gradient(to right, #854d0e, #a16207);
+        }
+        
+        .dark-mode h1, .dark-mode p.header-text {
+            color: #f3f4f6;
+        }
+        
+        .dark-mode label {
+            color: #e5e7eb;
+        }
+        
+        .form-container input, .form-container select, .form-container textarea {
+            background-color: #374151;
+            border-color: #4b5563;
+            color: #e5e7eb;
+        }
+        
+        .form-container input:focus, .form-container select:focus, .form-contaier textarea:focus {
+            border-color: #ca8a04;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(202, 138, 4, 0.3);
+        }
+        
+        .form-container ::placeholder {
+            color: #9ca3af;
+        }
+        
+       /* .form-container input {appearance:none;}*/
+
+        .form-container input[type="checkbox"]::before {
+            background-color: #374151;
+            border-color: #4b5563;
+            /*color: #e5e7eb;*/
+            accent-color: #ca8a04;
+        }
+       /* input[type="checkbox"]:checked {
+        background-color: "#ffffff";
+        }*/
+        
+        .dark-mode .text-gray-700, .dark-mode .text-gray-600 {
+            color: #d1d5db;
+        }
+        
+        .dark-mode .text-gray-500 {
+            color: #9ca3af;
+        }
+        
+        .dark-mode .success-message {
+            background-color: rgba(6, 78, 59, 0.8);
+            color: #d1fae5;
+        } 
+        /* Additional custom styles if needed */
+        .dff-red {color:rgb(253, 1, 0)}
+        .dff-blue {color:rgb(0, 91, 172)}
+        .dff-yellow {color: rgb(250, 204, 21)}
+      </style>
 </head>
-<body class="font-sans text-3xl bg-yellow-400">
+<body class="font-sans text-3xl transition-colors duration-3000" style="background-color: rgb(250, 204, 21);">
   <!-- Header with hero image -->
   <header class="w-full p-0">
-    <img src="assets/dff_header.png" alt="Democracy First! Fridays Logo" class="max-w-[800px] mx-auto h-auto object-cover">
+    <img src="assets/dff_header.png" alt="Democracy First! Fridays Logo" class="max-w-4xl mx-auto h-auto object-cover">
   </header>
 
   <!-- Main content -->
-  <main class="max-w-[800px] mx-auto mt-4 w-full">
+  <main class="max-w-4xl mx-auto mt-4 w-full">
     <article>
       <header class="text-center mb-5">
         <h1 class="mb-5 sr-only"><span class="italic">Democracy First! Fridays</span></h1>
@@ -40,7 +108,7 @@
         <h2 class="text-center font-bold uppercase text-4xl mb-4 dff-red">Get Involved</h2>
 <p class="mb-4 text-2xl">Anyone can contribute to <span class="italic">Democracy First! Fridays</span>:</p>
 
-<div class="max-w-3xl mx-auto space-y-6 mb-8">
+<div class="max-w-4xl mx-auto space-y-6 mb-8">
 
     <div>
       <h3 class="font-bold text-3xl">Host an Event</h3>
@@ -154,16 +222,298 @@
           Democracy is more than elections—it’s about <strong>active participation, free expression, and standing up for our civil rights</strong>. By taking part in <span class="italic"><span class="italic">Democracy First! Fridays</span></span>, you’re not just attending an event—you’re helping to create a society where <strong>everyone</strong> is seen, heard, and valued.
         </p>
         <p class="text-center text-4xl font-bold my-8">If all that sounds good to you, let’s get started.</p>
-        <p class="text-center">
-          <button type="button" href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sign Up to Host, Join, or Volunteer</button>
-        </p>
+      </section>
+      <section class="py-8 px-4">
+        <div class="container mx-auto px-4 py-12">
+          <div class="rounded-lg shadow-xl overflow-hidden form-container transition-colors duration-300">
+            <div class="px-6 py-8 md:p-10 bg-gradient-to-r from-yellow-300 to-yellow-300 form-header transition-colors duration-300">
+              <h2 class="text-4xl uppercase font-bold text-center dff-red">Join us in defending and expanding our democracy </h2>
+              <p class="mt-2 text-center text-gray-700 header-text">Be part of something amazing in this community</p>
+          </div>
+              <form id="communityForm" class="px-6 py-8 md:p-10">
+                  <!--<div class="grid gap-6 mb-6 md:grid-cols-2"> -->
+                  <div class="mb-6">
+                      <label for="firstName" class="block mb-2 text-lg font-medium text-gray-700">First Name <span class="text-red-500">*</span></label>
+                      <input type="text" id="firstName" name="firstName" required class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="Jane">
+                  </div>
+                  <div class="mb-6">
+                    <label for="lastName" class="block mb-2 text-lg font-medium text-gray-700">Last Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="lastName" name="lastName" required class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="Doe">
+                </div>
+                  <div class="mb-6">
+                      <label for="email" class="block mb-2 text-lg font-medium text-gray-700">Email Address <span class="text-red-500">*</span></label>
+                      <input type="email" id="email" name="email" required class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="janedoe@example.com">
+                  </div>
+                  <!-- </div> -->
+                  
+                  <div class="mb-6">
+                      <label for="phone" class="block mb-2 text-lg font-medium text-gray-700">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="(123) 456-7890">
+                  </div>
+                  
+                  <div class="mb-6">
+                      <label class="block mb-2 text-lg font-medium text-gray-700">I'm interested in learning more about: <span class="text-red-500">*</span></label>
+                      <div class="flex flex-col space-y-2">
+                          <div class="flex items-center">
+                              <input type="checkbox" name="role" value="host" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Being an Event Host</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="role" value="participant" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Participating in Events</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="role" value="volunteer" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Volunteering</label>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                      <label class="block mb-2 text-lg font-medium text-gray-700">What types of events interest you?</label>
+                      <div class="flex flex-col space-y-2">
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="workshops" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Hands-on workshops</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="forums" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Public Forums</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="rallies" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Rallies</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="performances" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Street Performance</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="arts" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Arts & Culture Events</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="educational" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Educational Sessions</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="community_service" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Community Service</label>
+                          </div>
+                          <div class="flex items-center">
+                              <input type="checkbox" name="interests" value="other" class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                              <label class="ml-2 text-lg font-medium text-gray-700">Other</label>
+                          </div>
+                      </div>
+                  </div>
+                  
+  
+                  <div class="mb-6">
+                      <label for="message" class="block mb-2 text-lg font-medium text-gray-700">Additional Information or Questions</label>
+                      <textarea id="message" name="message" rows="4" class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="Tell us more..."></textarea>
+                  </div>
+                  
+                  <div class="mb-6">
+                      <div class="flex items-center">
+                          <input type="checkbox" name="mailingList" value="yes" checked class="w-5 h-5 text-yellow-500 bg-gray-100 rounded border-gray-300 focus:ring-yellow-500">
+                          <label class="ml-2 text-lg font-medium text-gray-700">I'd like to join the mailing list to receive updates about Democracy First! Friday events</label>
+                      </div>
+                  </div>
+                  
+                  <div class="mb-6">
+                    <div class="g-recaptcha" data-sitekey="6LehSgorAAAAAOiqKU5nByvmTrVbOnLTEbirhe92"></div>
+                    <p class="mt-1 text-sm text-gray-500">This helps us prevent spam submissions</p>
+                </div>
+  
+                  <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:ring-yellow-300 font-bold rounded-lg text-lg px-5 py-3 text-center transition duration-200">Sign Up</button>
+                  
+                  <div id="successMessage" class="hidden mt-6 p-4 text-sm text-green-700 bg-green-100 bg-opacity-90 rounded-lg success-message" role="alert">
+                      <div class="flex items-center">
+                          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                          </svg>
+                          <span class="font-medium">Thank you for your interest! We'll be in touch soon.</span>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  
       </section>
     </article>
+  
   </main>
 
   <!-- Footer -->
   <footer class="max-w-[800px] mx-auto text-center mt-4 mb-4 text-lg">
     <p>&copy; 2025 <span class="italic">Democracy First! Fridays</span>. All rights reserved.</p>
   </footer>
+  <script>
+    document.getElementById('communityForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate the form
+        if (!validateForm()) {
+            return false;
+        }
+        
+        // Verify reCAPTCHA
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+            alert("Please complete the reCAPTCHA verification");
+            return false;
+        }
+        
+        // Gather form data
+        const formData = new FormData(this);
+        
+        // Add reCAPTCHA response
+        formData.append('g-recaptcha-response', recaptchaResponse);
+        
+        // Add timestamp
+        formData.append('timestamp', new Date().toISOString());
+        
+        // Handle multiple checkbox values
+        const roleSelections = [];
+        const interestSelections = [];
+        
+        document.querySelectorAll('input[name="role"]:checked').forEach(checkbox => {
+            roleSelections.push(checkbox.value);
+        });
+        
+        document.querySelectorAll('input[name="interests"]:checked').forEach(checkbox => {
+            interestSelections.push(checkbox.value);
+        });
+        
+        formData.set('role', roleSelections.join(', '));
+        formData.set('interests', interestSelections.join(', '));
+        
+        // Send to Google Sheets and Email using POST method
+        submitToGoogleSheet(formData);
+    });
+    
+    // Form validation function
+    function validateForm() {
+        // Get form elements
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const roleChecked = document.querySelectorAll('input[name="role"]:checked').length > 0;
+        
+        // Clear any previous error messages
+        const errorElements = document.querySelectorAll('.error-message');
+        errorElements.forEach(el => el.remove());
+        
+        // Check required fields
+        let isValid = true;
+        
+        if (!firstName) {
+            displayError('firstName', 'First name is required');
+            isValid = false;
+        }
+        if (!lastName) {
+            displayError('lastName', 'Last name is required');
+            isValid = false;
+        }
+        
+        if (!email) {
+            displayError('email', 'Email is required');
+            isValid = false;
+        } else if (!isValidEmail(email)) {
+            displayError('email', 'Please enter a valid email address');
+            isValid = false;
+        }
+        
+        if (!roleChecked) {
+            // Since this is a checkbox group, we'll add error after the last checkbox
+            const lastRoleOption = document.querySelector('input[name="role"]:last-of-type').parentNode;
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message text-red-500 text-sm mt-1';
+            errorDiv.innerText = 'Please select at least one option';
+            lastRoleOption.parentNode.appendChild(errorDiv);
+            isValid = false;
+        }
+        
+        return isValid;
+    }
+    
+    // Helper function to display error messages
+    function displayError(elementId, message) {
+        const element = document.getElementById(elementId);
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message text-red-500 text-sm mt-1';
+        errorDiv.innerText = message;
+        element.parentNode.appendChild(errorDiv);
+    }
+    
+    // Email validation
+    function isValidEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    // Function to send data to Google Apps Script
+    function submitToGoogleSheet(formData) {
+        // Your Google Apps Script Web App URL goes here
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbydk8wQo-hxwTuIk7col86HJwsAWX7TpkwKi8LiNRH8eM5zxPy9hv3fFLuf9ed_2fJvNw/exec';
+        
+        // Show loading state
+        const submitButton = document.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.innerHTML;
+        submitButton.innerHTML = 'Submitting...';
+        submitButton.disabled = true;
+        
+        // Send the data using fetch API with POST method
+        fetch(scriptURL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors',
+        })
+        .then(response => {
+            console.log('Form submitted successfully');
+            
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // Reset form
+            document.getElementById('communityForm').reset();
+            
+            // Reset reCAPTCHA
+            grecaptcha.reset();
+            
+            // Reset button
+            submitButton.innerHTML = originalButtonText;
+            submitButton.disabled = false;
+        })
+        .catch(error => {
+            console.error('Error submitting form', error);
+            alert('There was an error submitting the form. Please try again.');
+            
+            // Reset button
+            submitButton.innerHTML = originalButtonText;
+            submitButton.disabled = false;
+        });
+    }
+
+    // Dark mode toggle functionality
+    document.getElementById('darkModeToggle').addEventListener('click', function() {
+        const body = document.getElementById('body');
+        
+        if (body.classList.contains('dark-mode')) {
+            // Switch to light mode
+            body.classList.remove('dark-mode');
+            body.style.backgroundColor = 'rgb(250, 204, 21)';
+            this.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
+        } else {
+            // Switch to dark mode
+            body.classList.add('dark-mode');
+            body.style.backgroundColor = '#1f2937';
+            this.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
+        }
+    });
+</script>
 </body>
 </html>
