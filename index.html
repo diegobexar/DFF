@@ -7,7 +7,7 @@
   <!-- Tailwind CSS via CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LehSgorAAAAAOiqKU5nByvmTrVbOnLTEbirhe92"></script>
     <style>
         body, html {
             font-family: 'Noto Sans', sans-serif;
@@ -317,10 +317,6 @@
                       </div>
                   </div>
                   
-                  <div class="mb-6">
-                    <div class="g-recaptcha" data-sitekey="6LehSgorAAAAAOiqKU5nByvmTrVbOnLTEbirhe92"></div>
-                    <p class="mt-1 text-sm text-gray-500">This helps us prevent spam submissions</p>
-                </div>
   
                   <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:ring-yellow-300 font-bold rounded-lg text-lg px-5 py-3 text-center transition duration-200">Sign Up</button>
                   
@@ -354,18 +350,11 @@
             return false;
         }
         
-        // Verify reCAPTCHA
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-            alert("Please complete the reCAPTCHA verification");
-            return false;
-        }
-        
         // Gather form data
         const formData = new FormData(this);
         
-        // Add reCAPTCHA response
-        formData.append('g-recaptcha-response', recaptchaResponse);
+        // Add timestamp
+        formData.append('timestamp', new Date().toISOString());
         
         // Add timestamp
         formData.append('timestamp', new Date().toISOString());
@@ -385,8 +374,13 @@
         formData.set('role', roleSelections.join(', '));
         formData.set('interests', interestSelections.join(', '));
         
-        // Send to Google Sheets and Email using POST method
-        submitToGoogleSheet(formData);
+        // Execute reCAPTCHA v3 and then send to Google Sheets
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LehSgorAAAAAOiqKU5nByvmTrVbOnLTEbirhe92', {action: 'submit'}).then(function(token) {
+                formData.append('g-recaptcha-response', token);
+                submitToGoogleSheet(formData);
+            });
+        });
     });
     
     // Form validation function
@@ -478,8 +472,7 @@
             // Reset form
             document.getElementById('communityForm').reset();
             
-            // Reset reCAPTCHA
-            grecaptcha.reset();
+            // (reCAPTCHA v3 does not require reset)
             
             // Reset button
             submitButton.innerHTML = originalButtonText;
