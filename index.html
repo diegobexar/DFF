@@ -99,7 +99,7 @@
       <section class="py-8 px-4">
         <h2 class="text-center font-bold uppercase text-4xl mb-4 dff-red">What is <span class="italic">Democracy First! Fridays</span>?</h2>
         <p class="mb-4">
-          Like the popular First Friday Art Walks that take place on the first Friday of each month, <span class="italic">Democracy First! Fridays</span> are a network of popup community events throughout Downtown Missoula that happen every Friday and are aimed at <strong>celebrating, protecting, and expanding our democratic values.</strong></p> <p clas="mb-4"> This unique moment in the history of our country requires a united pushback against the ongoing dismantling of our democratic institutions. The time is now for communities to engage in open discussions, artistic expression, grassroots organizing, cooperation, education, and mutual aid.
+          Like the popular First Friday Art Walks that take place on the first Friday of each month, <span class="italic">Democracy First! Fridays</span> are a network of popup community events throughout Downtown Missoula that happen every Friday and are aimed at <strong>celebrating, protecting, and expanding our democratic values.</strong></p> <p class="mb-4"> This unique moment in the history of our country requires a united pushback against the ongoing dismantling of our democratic institutions. The time is now for communities to engage in open discussions, artistic expression, grassroots organizing, cooperation, education, and mutual aid.
         </p>
         <p class="text-center text-4xl font-bold mt-5">A united community can make a difference.</p>
       </section>
@@ -497,23 +497,6 @@
             submitButton.disabled = false;
         });
     }
-
-    // Dark mode toggle functionality
-    document.getElementById('darkModeToggle').addEventListener('click', function() {
-        const body = document.getElementById('body');
-        
-        if (body.classList.contains('dark-mode')) {
-            // Switch to light mode
-            body.classList.remove('dark-mode');
-            body.style.backgroundColor = 'rgb(250, 204, 21)';
-            this.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
-        } else {
-            // Switch to dark mode
-            body.classList.add('dark-mode');
-            body.style.backgroundColor = '#1f2937';
-            this.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
-        }
-    });
 </script>
 </body>
 </html>
