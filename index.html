@@ -7,7 +7,7 @@
   <!-- Tailwind CSS via CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://www.google.com/recaptcha/api.js?render=6LehSgorAAAAAOiqKU5nByvmTrVbOnLTEbirhe92"></script>
+    <!--<script src="https://www.google.com/recaptcha/api.js?render=6LehSgorAAAAAOiqKU5nByvmTrVbOnLTEbirhe92"></script>-->
     <style>
         body, html {
             font-family: 'Noto Sans', sans-serif;
@@ -219,10 +219,13 @@
       </section>
       <section class="py-8 px-4">
         <p class="text-center text-4xl font-bold my-8">If all that sounds good to you, let’s get started.</p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfR_avyxHqPhtsMkhbN95OK8UJTx7Jpo3ge4CjR7G21DIqJnQ/viewform?embedded=true" width="800" height="2100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+        <!--
         <div class="container mx-auto px-4">
           <div class="rounded-lg overflow-hidden form-container transition-colors duration-300">
               <form id="communityForm" class="px-6 py-8 md:p-10">
-                  <!--<div class="grid gap-6 mb-6 md:grid-cols-2"> -->
+                  
                   <div class="mb-6">
                       <label for="firstName" class="block mb-2 text-lg font-medium text-gray-700">First Name <span class="text-red-500">*</span></label>
                       <input type="text" id="firstName" name="firstName" required class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="Jane">
@@ -235,7 +238,7 @@
                       <label for="email" class="block mb-2 text-lg font-medium text-gray-700">Email Address <span class="text-red-500">*</span></label>
                       <input type="email" id="email" name="email" required class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-yellow-500 focus:border-yellow-500 block w-full p-2.5" placeholder="janedoe@example.com">
                   </div>
-                  <!-- </div> -->
+                  
                   
                   <div class="mb-6">
                       <label for="phone" class="block mb-2 text-lg font-medium text-gray-700">Phone Number</label>
@@ -324,7 +327,7 @@
                   </div>
               </form>
           </div>
-      </div>
+      </div>-->
   
       </section>
     </article>
@@ -335,7 +338,7 @@
   <footer class="max-w-[800px] mx-auto text-center mt-4 mb-4 text-lg">
     <p>&copy; 2025 <span class="italic">Democracy First! Fridays</span>. All rights reserved.</p>
   </footer>
-  <script>
+  <script>/*
     document.getElementById('communityForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -480,7 +483,7 @@
             submitButton.innerHTML = originalButtonText;
             submitButton.disabled = false;
         });
-    }
+    }*/
 </script>
 </body>
 </html>
